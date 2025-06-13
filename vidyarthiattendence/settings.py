@@ -28,6 +28,11 @@ DEBUG = True
 # All Environment Variables
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
 
+DATABASE_NAME=os.getenv("DJANGO_DATABASE_NAME", "").split(",")[0]
+
+DATABASE_USER=os.getenv("DJANGO_DATABASE_USER", "").split(",")[0]
+
+DATABASE_PASSWORD=os.getenv("DJANGO_DATABASE_PASSWORD", "").split(",")[0]
 
 # Application definition
 
@@ -75,8 +80,12 @@ WSGI_APPLICATION = 'vidyarthiattendence.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': DATABASE_NAME,
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
+        'HOST': 'localhost',  # Or your host, if different
+        'PORT': '3306',
     }
 }
 

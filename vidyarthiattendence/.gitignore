@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Virtual environment
+venv/
+
+# Django secret settings (if any)
+.env
+
+# IDEs
+.vscode/
+*.swp
+*.bak
+
+# OS files
+Thumbs.db
+.DS_Store

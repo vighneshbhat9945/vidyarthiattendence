@@ -74,10 +74,15 @@ WSGI_APPLICATION = 'vidyarthiattendence.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'vidyarthiattendence',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',  # Or your host, if different
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
